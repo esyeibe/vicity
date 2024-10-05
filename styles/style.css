@@ -1,0 +1,644 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(14, 12, 33);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: white;
+    padding-left: 20px;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+}
+
+nav {
+    width: calc(100% - 40px);
+    height: 55px;
+    position: fixed;
+    padding: 0 20px;
+    top: 20px;
+    right: 20px;
+    border-radius: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+nav::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 55px;
+    background-color: rgba(49, 46, 129, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 13px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+nav img {
+    position: relative;
+    height: 47%;
+    transform: translateY(2px);
+    width: auto;
+    z-index: 150;
+}
+
+nav .hm-btn {
+    position: relative;
+    height: 25px;
+    width: 30px;
+    background-color: transparent;
+    z-index: 150;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+nav .hm-btn .hm-btn-item {
+    width: 100%;
+    height: 13%;
+    border-radius: 50px;
+    background-color: #d5d5d5;
+    transform: translateY(0px) rotate(0deg);
+    opacity: 1;
+    transition: 0.5s ease-in-out;
+}
+
+nav .hm-btn-active .hm-btn-item:nth-child(1) {
+    transform: translateY(11px) rotate(225deg);
+}
+
+nav .hm-btn-active .hm-btn-item:nth-child(2) {
+    opacity: 0;
+}
+
+nav .hm-btn-active .hm-btn-item:nth-child(3) {
+    transform: translateY(-11px) rotate(135deg);
+}
+
+nav .menu {
+    position: absolute;
+    list-style-type: none;
+    width: 100%;
+    max-height: 0px;
+    text-align: center;
+    top: 100%;
+    left: 0;
+    transform: translateY(10px);
+    background-color: rgba(49, 46, 129, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in;
+}
+
+nav .menu-active {
+    max-height: 145px;
+}
+
+nav .menu li {
+    padding: 15px 0;
+    color: white;
+    display: block;
+    border-bottom: 1px solid rgba(123, 110, 183, 0.95);
+    position: relative;
+}
+
+nav .menu li:nth-child(3) {
+    border: none;
+}
+
+.homepage {
+    width: 85%;
+    height: max-content;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(49, 46, 129, 0.2);
+    backdrop-filter: blur(8px);
+    color: white;
+}
+
+.homepage .city {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.homepage .city img {
+    height: 60px;
+    width: auto;
+}
+
+.homepage .city h1 {
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.homepage .city p {
+    font-size: 15px;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+}
+
+.homepage .additional-information {
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.homepage .additional-information div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.homepage .additional-information div img {
+    height: 23px;
+    width: auto;
+}
+
+.homepage .additional-information div p {
+    font-size: 15px;
+    margin: 0 0 -5PX 7PX;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.description>p {
+    font-size: 18px;
+    text-align: justify;
+    padding: 3px 20px;
+    line-height: 23px;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+}
+
+.explore {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0 5px;
+}
+
+.explore a {
+    display: block;
+    padding: 10px 0;
+    width: 70%;
+    text-align: center;
+    background-color: #7c3aed;
+    font-size: 20px;
+    border-radius: 50px;
+}
+
+main {
+    padding: 15px;
+    width: 100%;
+}
+
+main .content {
+    margin-top: 20px;
+}
+
+main .content div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+main .content .city {
+    width: calc(50% - 20px);
+    margin: 10px;
+    max-height: 250px;
+    aspect-ratio: 3/4;
+    border-radius: 15px;
+    display: block;
+    position: relative;
+}
+
+main .content .city:nth-child(1) {
+    background: linear-gradient(to bottom,
+            rgba(25, 25, 25, 0.45),
+            rgba(25, 25, 25, 0.45)),
+        url('../assets/city/paris.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+main .content .city:nth-child(2) {
+    background: linear-gradient(to bottom,
+            rgba(25, 25, 25, 0.45),
+            rgba(25, 25, 25, 0.45)),
+        url('../assets/city/kyoto.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+main .content .city:nth-child(3) {
+    background: linear-gradient(to bottom,
+            rgba(25, 25, 25, 0.45),
+            rgba(25, 25, 25, 0.45)),
+        url('../assets/city/roma.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+main .content .city:nth-child(4) {
+    background: linear-gradient(to bottom,
+            rgba(25, 25, 25, 0.45),
+            rgba(25, 25, 25, 0.45)),
+        url('../assets/city/cape-town.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+main .content .city:nth-child(5) {
+    background: linear-gradient(to bottom,
+            rgba(25, 25, 25, 0.45),
+            rgba(25, 25, 25, 0.45)),
+        url('../assets/city/sydney.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+main .content .city:nth-child(6) {
+    background: linear-gradient(to bottom,
+            rgba(25, 25, 25, 0.45),
+            rgba(25, 25, 25, 0.45)),
+        url('../assets/city/rio-de-jeneiro.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+main .content h3 {
+    color: white;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+aside {
+    width: 100%;
+    padding: 20px 5px;
+}
+
+aside>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+aside .profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+aside .profil img {
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+}
+
+aside .profil .sosmed {
+    margin-top: 20px;
+}
+
+aside .profil .sosmed a {
+    padding: 5px 10px;
+    margin: 0 8px;
+    border-radius: 8px;
+}
+
+aside .profil .sosmed a:nth-child(1) {
+    background-color: #bc1888;
+}
+
+aside .profil .sosmed a:nth-child(2) {
+    background-color: #0077B5;
+}
+
+aside .bio {
+    color: white;
+    font-size: 20px;
+    padding: 20px 0;
+}
+
+aside .bio td {
+    padding: 0 5px;
+}
+
+.detail {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(25, 25, 25, 0.404);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-active {
+    display: flex;
+}
+
+.detail>div {
+    width: 90%;
+    height: max-content;
+    background-color: rgba(49, 46, 129);
+    border-radius: 15px;
+    color: white;
+    position: relative;
+}
+
+.detail>div>img {
+    width: 100%;
+}
+
+.detail-info {
+    padding: 5px 20px;
+}
+
+.detail .city {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.detail .city img {
+    height: 60px;
+    width: auto;
+}
+
+.detail .city h1 {
+    font-size: 25px;
+}
+
+.detail .additional-information {
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.detail .additional-information div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.detail .additional-information div img {
+    height: 23px;
+    width: auto;
+}
+
+.detail .additional-information div p {
+    font-size: 15px;
+    margin: 0 0 -5PX 7PX;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.detail .detail-text {
+    font-size: 18px;
+    text-align: justify;
+    padding: 3px 20px;
+    line-height: 25px;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+}
+
+.detail .rute {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.detail a {
+    background-color: rgb(108, 11, 244);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 20px;
+}
+
+.exit {
+    position: absolute;
+    font-size: 30px;
+    padding: 0 8px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    top: 0;
+    right: 10px;
+    transform: translateY(-120%) rotate(45deg);
+    cursor: pointer;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 15px;
+    background-color: rgb(49, 46, 129);
+    line-height: 25px;
+}
+
+@media (min-width: 720px) {
+    nav .hm-btn {
+        display: none;
+    }
+
+    nav .menu {
+        position: relative;
+        width: 30%;
+        max-height: min-content;
+        text-align: center;
+        top: 0;
+        transform: translateY(0px);
+        background-color: transparent;
+        backdrop-filter: none;
+        border-radius: 10px;
+        overflow: show;
+        transition: none;
+        z-index: 150;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    nav .menu li {
+        padding: 0;
+        display: inline;
+        border-bottom: 0;
+    }
+
+    main .content .city {
+        width: calc(33% - 20px);
+        margin: 10px;
+        max-height: 250px;
+        aspect-ratio: 3/4;
+        border-radius: 15px;
+        display: block;
+        position: relative;
+    }
+
+    aside>div {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    aside .profil img {
+        width: 150px;
+        height: auto;
+        border-radius: 20px;
+    }
+
+    aside .profil .sosmed a {
+        font-size: 15px;
+        padding: 5px 10px;
+        margin: 0 2px;
+        border-radius: 5px;
+    }
+
+    .detail>div {
+        width: 90%;
+        height: max-content;
+        background-color: rgba(49, 46, 129);
+        border-radius: 15px;
+        color: white;
+        display: flex;
+    }
+
+    .detail>div>img {
+        width: 40%;
+        /* height: 200px; */
+    }
+
+    .detail-info {
+        padding: 5px 20px;
+        width: 60%;
+    }
+
+
+    .detail .rute {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        padding: 15px;
+    }
+
+}
+
+@media (min-width: 960px) {
+    .homepage {
+        width: 40%;
+        bottom: 30px;
+        left: 30px;
+        transform: none;
+    }
+
+    .explore {
+        width: 40%;
+        margin: auto 0px auto auto;
+    }
+
+    .homepage .additional-information {
+        width: 70%;
+    }
+
+    main {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    main .content {
+        width: 70%;
+    }
+
+    aside {
+        width: 29%;
+    }
+
+    aside>div {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    aside .profil {
+        align-items: start;
+        margin-top: 20px;
+    }
+
+    aside .profil img {
+        width: 150px;
+        height: auto;
+        border-radius: 20px;
+    }
+
+    aside .profil .sosmed a {
+        font-size: 18px;
+        padding: 5px 10px;
+        margin: 0 16px 0 0;
+        border-radius: 10px;
+    }
+
+    .detail .detail-text {
+        font-size: 20px;
+        padding: 3px 20px;
+        line-height: 30px;
+    }
+}
