@@ -136,6 +136,7 @@ const detail = document.querySelector(".detail")
 const citys = document.querySelectorAll(".city")
 const exit = document.querySelector(".exit")
 const detailInfo = document.querySelector(".detail-info")
+const detailImage = document.querySelector(".detail-image");
 
 citys.forEach(city => {
   city.addEventListener("click", (e) => {
@@ -150,7 +151,7 @@ citys.forEach(city => {
 
     const detailText = cityData(data.kota, data.negara, data.tagline, data.deskripsi, data.waktu);
 
-    console.log(data.image);
+    detailImage.setAttribute('src', data.image);
     detail.classList.add("detail-active");
 
     detailInfo.innerHTML = detailText + rute
